@@ -1,10 +1,8 @@
 import urllib.request
 from datetime import datetime
 
-import requests
-
-start = "# GitHub Host Start\n"
-end = "# GitHub Host End\n"
+start = "# GitHub520 Host Start\n"
+end = "# GitHub520 Host End\n"
 
 
 def solve_hosts():
@@ -42,7 +40,7 @@ def write_none(lines):
 
 
 def get_hosts():
-    host_file = urllib.request.urlopen('https://gitee.com/ineo6/hosts/raw/master/hosts')
+    host_file = urllib.request.urlopen('https://raw.hellogithub.com/hosts')
     new_hosts = host_file.read().decode("utf8").split("\n")
     new_hosts = list(map(lambda x: x + "\n", new_hosts))
     return new_hosts
@@ -52,5 +50,4 @@ if __name__ == "__main__":
     print(f"=============执行开始:{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}===========")
     solve_hosts()
     print(f"=============执行结束:{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}===========")
-    print("\n")
     print("\n")
